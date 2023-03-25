@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": "charugulla",
+      "name": "Sai Ritvik",
+      "password": "123456",
+      "email": "2002@gmail.com",
+      "phone": "77309821785",
+      "country": "india",
+      "address": "Khammam"
+    },
+    {
+      "id": "noobkasyap",
+      "name": "Kasyap",
+      "password": "noob",
+      "email": "Kasyap@gmail.com",
+      "phone": "9347221780",
+      "country": "india",
+      "address": "Hyderabad"
+    }
+  ]
+}

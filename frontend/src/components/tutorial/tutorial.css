@@ -1,0 +1,145 @@
+.tutorialll{
+    background-color: #97bbc1;
+}
+ #tutoriall{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #97bbc1;
+}
+ ::selection{
+  background: #6d50e2;
+  color: #fff;
+}
+ /* .containerr{
+  max-width: 950px;
+  width: 100%;
+  padding: 40px 50px  40px  40px;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}  */
+.containerr .topicc{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-bottom: 50px;
+  color: rgb(214, 210, 210);
+  font-weight: bold;
+}
+ .contentt{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contentt .listt{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 50px;
+  position: relative;
+}
+.contentt .listt label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+#stack:checked ~ .listt label.stack,
+#queue:checked ~ .listt label.queue,
+#bst:checked ~ .listt label.bst,
+#heap:checked ~ .listt label.heap,
+#hash:checked ~ .listt label.hash{
+  color: #fff;
+}
+.contentt .listt label:hover{
+  color: #2f938a;
+} 
+.contentt .sliderr{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #2f938a;
+  transition: all 0.4s ease;
+}
+#stack:checked ~ .listt .sliderr{
+  top: 0;
+}
+#queue:checked ~ .listt .sliderr{
+  top: 60px;
+}
+#bst:checked ~ .listt .sliderr{
+  top: 120px;
+}
+#heap:checked ~ .listt .sliderr{
+  top: 180px;
+}
+#hash:checked ~ .listt .sliderr{
+  top: 240px;
+}
+.contentt .text-content{
+  width: 80%;
+  height: 100%;
+}
+.contentt .text{
+  display: none;
+}
+.contentt .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: aliceblue;
+  font-weight: bold;
+}
+.contentt .text p{
+  text-align: justify;
+  padding-top: 20px;
+}
+.contentt .text-content .stack{
+  display: block;
+}
+
+.contentt .text-content a{
+    padding: 12px;
+    background-color: #2f938a;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .contentt .text-content a:hover{
+    padding: 12px;
+    background-color: #2f938a;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    color:rgb(125, 239, 239);
+}
+  
+#stack:checked ~ .text-content .stack,
+#queue:checked ~ .text-content .queue,
+#bst:checked ~ .text-content .bst,
+#heap:checked ~ .text-content .heap,
+#hash:checked ~ .text-content .hash{
+  display: block;
+}
+#queue:checked ~ .text-content .stack,
+#bst:checked ~ .text-content .stack,
+#heap:checked ~ .text-content .stack,
+#hash:checked ~ .text-content .stack{
+  display: none;
+}
+.contentt input{
+  display: none;
+}
