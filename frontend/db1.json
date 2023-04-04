@@ -17,6 +17,15 @@
       "phone": "9347221780",
       "country": "india",
       "address": "Hyderabad"
+    },
+    {
+      "id": "ulli",
+      "name": "Rupendra",
+      "password": "ulli",
+      "email": "rupendra@gmail.com",
+      "phone": "9000747762",
+      "country": "india",
+      "address": "Hyd"
     }
   ]
 }

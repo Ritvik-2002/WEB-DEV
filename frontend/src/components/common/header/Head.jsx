@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react";
+import { Link } from "react-router-dom"
 // import logo from "/images/logo/logo.png"
 import instructor1 from '../../../assets/creator/instructor1.jpg';
 import instructor2 from '../../../assets/creator/instructor2.png'
@@ -23,7 +24,7 @@ const Head = () => {
           <div className='logo'>   
             <div className="">
               <div className='logoimm'>
-                <a href=""><img src={logo}/></a>
+                <Link to = '/'><a href=""><img src={logo}/></a></Link>
               </div>
             </div>
             <span><h6 style={{paddingLeft:'30px', fontWeight: "bold"}}>Expertize DataStructures and Algorithms</h6></span>
@@ -35,6 +36,8 @@ const Head = () => {
             <i className='fab fa-instagram iconn'></i>
             <i className='fab fa-twitter iconn'></i>
           </div>
+          
+          
           
           <div className="header_black col-lg-5 col-md-7 col-6">
             <div className= "middel_right">

@@ -18,8 +18,6 @@ const Profile = () => {
         if (username === '' || username === null) {
             usenavigate('/login');
         }
-        
-
     }, [usenavigate, username]);
     useEffect(()=>{
         fetch(`http://localhost:5000/${username}`).then(async response=>{

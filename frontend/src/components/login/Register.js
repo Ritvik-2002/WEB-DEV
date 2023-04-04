@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import axios from 'axios';
+import axios from 'axios';
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -57,14 +57,22 @@ const Register = () => {
             let regobj = { id, name, password, email, phone, country, address };
             if (IsValidate()) {
             //console.log(regobj);
-            fetch("http://localhost:8000/user", {
-                method: "POST",
-                headers: { 'content-type': 'application/json' },
-                body: JSON.stringify(regobj)
-            }).then((res) => {
+            axios.post("http://localhost:5000/register",regobj).then((res) => {
                 // console.log(res);
+                const enteredOTP = prompt("Enter otp sent to mail")
+                const verification = {
+                    email:email,
+                    otp: enteredOTP
+                }
                 toast.success('Registered successfully.')
                 navigate('/login');
+                // axios.post("http://localhost:5000/verifyotp",verification).then(response => {
+                //     console.log(response);
+                //     if(response.status === 200){
+                //     } else{
+                //         toast.error('Invalid OTP')
+                //     }
+                // })
             }).catch((err) => {
                 toast.error('Failed :' + err.message);
             });

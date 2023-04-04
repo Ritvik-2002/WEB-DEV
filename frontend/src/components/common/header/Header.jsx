@@ -43,7 +43,7 @@ const Header = () => {
             </li>
           </ul>
           <div className='start'>
-            <div style={{'fontSize':'20px'}} className='button'>GET CERTIFICATE</div>
+            <div style={{'fontSize':'20px'}} className='button'><Link to ='/login'>Login</Link></div>
           </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ? <i className='fa fa-times'> </i> : <i className='fa fa-bars'></i>}

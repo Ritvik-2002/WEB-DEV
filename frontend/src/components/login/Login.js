@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-
+import axios from "axios"
 
 
 const Login = () => {
@@ -19,26 +19,19 @@ const Login = () => {
     const ProceedLogin = (e) => {
         e.preventDefault();
         if (validate()) {
-            ///implentation
-            // console.log('proceed');
-            fetch("http://localhost:8000/user/" + username).then((res) => {
-                return res.json();
-            }).then((resp) => {
-                //console.log(resp)
-                if (Object.keys(resp).length === 0) {
-                    toast.error('Please Enter valid username');
-                } else {
-                    if (resp.password === password) {
-                       console.log("HI");
-                        sessionStorage.setItem('username', username);
-                        toast.success('Success');
-                        sessionStorage.setItem('name',resp.name);
-                        usenavigate('/profile')
-                    } else {
-                        toast.error('Please Enter valid credentials');
-                    }
+            let regobj = { username,password};
+            axios.post("http://localhost:5000/login",regobj).then((resp) => {
+                // console.log(resp);
+                if(resp.status === 200){
+                    usenavigate('/profile');
+                    sessionStorage.setItem('username', username);
+                    sessionStorage.setItem('name',resp.data.name);
+                }
+                else{
+                    usenavigate('/login');
                 }
             }).catch((err) => {
+                // usenavigate('/profile');
                 toast.error('Login Failed due to :' + err.message);
             });
         }
